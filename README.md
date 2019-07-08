@@ -1,68 +1,41 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# EasyList ReactJS (Web)
 
-## Available Scripts
+### Objetivos e detalhes do projeto
 
-In the project directory, you can run:
+Esta é uma POC para testar o desenvolvimento em ReactJS em conjunto com Redux, Redux-Saga e DuckPattern (Reducers e Actions no mesmo arquivo - Sem Redux-Sauce).
+Pequenos equívocos de interface (UI/UX) podem ser observados, como por exemplo a falta de Loading em algumas interações, o que não invalida o valor acadêmico do projeto ;)
 
-### `npm start`
+O Projeto também foi uma boa fonte de testes para ciclos de vida e comportamento do render dos componentes!
+Aproveite a integração com o Reactotron e divirta-se com os _console.tron.log()_ no ciclo de vida ;)
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Ex: O componente List, responsável por renderizar cada uma das listas, "ouve" o estado com todas as listas, isso gera um plano carteziano no render dos componentes, ou seja, ao atualizar o estado de uma lista o render é executado o número de ítens da lista para cada componente.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+A aplicação não possui componente de erro - tudo é impresso no console e no log do reactotron ;)
 
-### `npm test`
+![Imagem do App EasyList-ReactJS Rodando](https://raw.githubusercontent.com/mayconfrancisco/easylist-server/master/imgs/EasyList-ReactJS-GIF.gif)
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Para rodar o projeto:
 
-### `npm run build`
+_Sete as configurações de endereço do BackEnd no arquivo /src/services/api.js_
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+_Para baixar as dependências_
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+**yarn**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+_Para iniciar a aplicação_
 
-### `npm run eject`
+**yarn start**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Sopinha de Letrinhas
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**prop-types** para as validações de parâmetros _props_
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+**axios** para requisições HTTP ao BackEnd
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**react-redux, redux, redux-saga** para o gerenciamento do estado da aplicação
 
-## Learn More
+**react-router-dom** para gerenciamento das rotas da aplicação embora tenhamos apenas uma e esse seria dispensável, ficou para efeitos de estudo ;)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**reactotron-react-js, reactotron-redux, reactotron-redux-saga** para dedug e auxílio na fase de desenvolvimento
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+**styled-components** para facilitar a criação e manutenção dos estilos da aplicação
