@@ -12,7 +12,7 @@ Ex: O componente List, responsável por renderizar cada uma das listas, "ouve" o
 
 A aplicação não possui componente de erro - tudo é impresso no console e no log do reactotron ;)
 
-![Imagem do App EasyList-ReactJS Rodando](https://raw.githubusercontent.com/mayconfrancisco/easylist-server/master/imgs/EasyList-ReactJS-GIF.gif)
+![Imagem do App EasyList-ReactJS Rodando](https://raw.githubusercontent.com/mayconfrancisco/easylist-reactjs/master/imgs/EasyList-ReactJS-GIF.gif)
 
 ### Para rodar o projeto:
 
