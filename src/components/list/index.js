@@ -64,8 +64,7 @@ class List extends React.Component {
   render() {
     const { list } = this.props;
     const { formItemVisible, addItemInput } = this.state;
-    // teste para ver quais componentes/lista serao renderizadas
-    console.log(`RENDER DO COMPONENTE ${list._id}`);
+    
     return (
       <Container>
         <Title>
@@ -113,8 +112,6 @@ class List extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  // TODO: problema de arquitetura de informacao - estamos ouvindo todas as listas
-  // dentro do componente de lista - isso provoca render desnecessário
   lists: state.lists,
 });
 

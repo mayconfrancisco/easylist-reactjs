@@ -33,11 +33,8 @@ export default function lists(state = INTIAL_STATE, action) {
 
     case Types.ADD_ITEM_SUCCESS: {
       const { item } = action.payload;
-      const listIdx = state.data.findIndex(l => l._id === item.listId);
-      // Nao eh uma boa pratica alterar o state diretamente
-      // Use o Seamless - https://github.com/rtfeldman/seamless-immutable
-      state.data[listIdx].items.push(item);
-      return { ...state, loading: false };
+      const newList = state.data.map(list => (list._id !== item.listId ? list : { ...list, items: [...list.items, item] }));
+      return { data: newList, loading: false };
     }
 
     case Types.ADD_ITEM_FINISHED_REQUEST:
@@ -45,12 +42,15 @@ export default function lists(state = INTIAL_STATE, action) {
 
     case Types.ADD_ITEM_FINISHED_SUCCESS: {
       const { id, listId, isFinished } = action.payload.data;
-      const listIdx = state.data.findIndex(l => l._id === listId);
-      const itemIdx = state.data[listIdx].items.findIndex(i => i._id === id);
-      // Nao eh uma boa pratica alterar o state diretamente
-      // Use o Seamless - https://github.com/rtfeldman/seamless-immutable
-      state.data[listIdx].items[itemIdx].isFinished = isFinished;
-      return { ...state, loading: false };
+
+      const newList = state.data.map(list => (list._id !== listId
+        ? list
+        : {
+          ...list,
+          items: list.items.map(item => (item._id !== id ? { ...item } : { ...item, isFinished })),
+        }));
+
+      return { data: newList, loading: false };
     }
 
     default:
